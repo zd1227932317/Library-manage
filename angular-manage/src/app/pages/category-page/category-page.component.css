@@ -1,0 +1,20 @@
+
+#addnew
+{
+    float: right;
+  
+}
+.table th,td
+{
+    text-align: center;
+    width: 25%;
+}
+.table td
+{
+    height: 70px;
+    line-height: 70px;
+}
+.table img
+{ 
+    height: 100%;
+}

@@ -1,0 +1,42 @@
+<!-- <div>
+  <header class="main-header navbar-inverse">
+
+
+        <h4 class="text-center"> <span class="glyphicon glyphicon-cog"></span> 图书管理系统
+        </h4>
+        <ul >
+            <li >
+              <a  id="usermessage"><span class="glyphicon glyphicon-user" style="padding-right:5px;"></span> {{username}}</a>
+            </li>
+            <li >
+                <a (click)="linkout_onclick()"> <span class="glyphicon glyphicon-off" style="padding-right:5px;"></span>  注销</a>
+            </li>
+        </ul>
+
+
+</header>
+<nav class=" navbar-inverse">
+    <ul class="nav navbar-nav">
+     
+        <li  routerLinkActive="actived"><a  [routerLink]="['./home']" ><i class="glyphicon glyphicon-home"></i>  欢迎</a></li>
+        <li  routerLinkActive="actived"><a  [routerLink]="['./category']" ><i class="glyphicon glyphicon-th"></i>  图书分类管理</a></li>
+        <li  routerLinkActive="actived"><a  [routerLink]="['./detail']"  ><i class="glyphicon glyphicon-book"></i>  图书信息管理</a></li>
+        <li  routerLinkActive="actived"><a  [routerLink]="['./list']"  ><i class="glyphicon glyphicon-list-alt"></i>  订单管理</a></li>
+        <li  routerLinkActive="actived"><a  [routerLink]="['./change']" ><i class="glyphicon glyphicon-repeat"></i>  修改密码</a></li>
+        <li  routerLinkActive="actived"><a  [routerLink]="['./count']" ><i class="glyphicon glyphicon-signal"></i>  统计</a></li>
+
+    </ul>
+</nav>
+<main>
+   <router-outlet></router-outlet>
+</main>
+</div> -->
+<div class="wrapper">
+
+        <app-page-header></app-page-header>
+      
+        <app-page-nav></app-page-nav>
+        
+        <router-outlet></router-outlet>
+      
+      </div>

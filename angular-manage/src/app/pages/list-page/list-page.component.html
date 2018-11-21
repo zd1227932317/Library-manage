@@ -1,0 +1,59 @@
+<div class="content-wrapper">
+  <section class="content-header">
+    <h1>
+      订单管理
+    </h1>
+    <ol class="breadcrumb">
+      <li> <a [routerLink]="['/index/home']"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li class="active"><a [routerLink]="['/index/list']">订单管理</a></li>
+    </ol>
+  </section>
+  <hr>
+  <section class="content">
+      <div class="input-group" style="width:260px;">
+          <input type="text" class="form-control ng-untouched ng-pristine ng-valid;" style="z-index:0;" placeholder="关键字图书号" >
+          <span class="input-group-btn " style="z-index:0;">
+            <button class="btn btn-primary" (click)="search_onclick()"><i class="glyphicon glyphicon-search"></i></button>
+          </span>
+        </div>
+        <ul class="nav nav-tabs">
+            <li role="presentation" [ngClass]="{'active': tbstate==i}" *ngFor="let item of tblist;let i=index;"><a href="javascript:void(0)" (click)="linktb_onclick(i)">{{item}}</a></li>
+        </ul>
+        <div>
+          <h4>{{tbname}}列表</h4>
+          <div class="booklist">
+            <div *ngFor="let item of showlist|sortBytimeFiter:sort;let i=index;">
+                <header>
+                    <span>图书名称: {{item.BookName}}</span>
+                    <span>图书编号: {{item.BookNumber}}</span>
+                    <span>借阅时间: {{item.CreateTime| date:'yyyy-MM-dd'}}</span>
+                  </header>
+                  <div class="book_container clearfix">
+                   
+                    <div class="book_prview">
+                      <div >{{i+1}}</div>
+                      <img [src]="item.BookImage" alt="">
+                    </div>
+                    <div class="list_optor">
+                        <button class="btn btn-success" (click)="optor_onclick(item)" *ngIf="item.State==3||item.State==1">{{item.State==1?'配送':'归还'}}</button>
+                    </div>
+                    <div class="book_state">
+                        <div>订单状态  {{liststate[item.State]}}</div>
+                    </div>
+                    <div class="book_dec">
+                      <div class="book_auhtor"> <label for="">作者:</label>  {{item.AuthorName}}</div>
+                        <div class="book_publisher"> <label for="">出版社:</label>  {{item.PublisherName}}</div>
+                    </div>
+                        
+                  </div>
+                 <footer>
+                   <span>借阅人: {{item.Reader.Name}}</span>
+                    <span>手机号码: {{item.Reader.Phone}}</span>
+                    <span>借阅编号: {{item.BorrowNumber}}</span>
+                  </footer>
+            </div>
+          </div>
+        </div>
+
+  </section>
+</div>

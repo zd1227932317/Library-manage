@@ -1,0 +1,36 @@
+<div class="dialog" *ngIf="state">
+  <div>
+    <header class="text-left">{{headtitle}}</header>
+    <div class="form-horizontal">
+        <div class="form-group">
+            <label for="txtauthor" class="col-sm-3 control-label">分类图片</label>
+            <div class="col-sm-8">
+              <i id="picturepreview">
+                  <img [src]="category.Image" alt="">
+              </i>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="filepicture" class="col-sm-3 control-label" ></label>
+            <div class="col-sm-8">
+              <input type="file" id="filepicture"  (change)="file_onchange($event)" >
+            </div>
+          </div>
+          <div class="form-group">
+              <label  class="col-sm-3 control-label" ></label>
+              <div class="col-sm-8" style="color:red;">{{errormessage}}</div>
+            </div>
+      <div class="form-group">
+        <label for="txtCategory" class="col-sm-3 control-label">分类名称</label>
+        <div class="col-sm-8">
+          <input type="text" id="txtCategory" class="form-control" [(ngModel)]="category.Name" >
+        </div>
+      </div>
+    
+    </div>
+    <footer class="text-right">
+      <button class="btn btn-default" (click)="state=false">取消</button>
+      <button class="btn btn-primary" (click)="btnSave_onclick($event)">保存</button>
+    </footer>
+  </div>
+</div>

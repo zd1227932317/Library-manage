@@ -1,0 +1,36 @@
+.content-wrapper
+{
+  
+   padding:0px 15px;
+   border: 1px solid #dddddd;
+box-sizing: border-box;
+background-color: white;
+}
+.content-header {
+    position: relative;
+    padding: 15px 15px 0 0px;
+}
+#addnew
+{
+    float: right;
+  
+}
+.table th,td
+{
+    text-align: center;
+}
+.table td
+{
+    height: 90px;
+    line-height: 90px;
+    
+}
+.table img
+{ 
+width: 90px;
+ 
+}
+button
+{
+    margin-left: 5px;
+}

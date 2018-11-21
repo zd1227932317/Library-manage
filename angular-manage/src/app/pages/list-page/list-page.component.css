@@ -1,0 +1,92 @@
+.nav-tabs
+{
+    margin-top: 10px;
+}
+h4
+{
+    margin-top: 18px;
+}
+.book_prview
+{
+    display: block;
+    width: 150px;
+    height: 100px;
+    margin: 10px;
+    float: left;
+    font-size: 16px;
+}
+.book_prview>div
+{
+    float: left;
+    height: 100px;
+    line-height: 100px;
+}
+
+.book_dec
+{
+    float: left;
+    margin: 10px 235px;
+    height: 100px;
+}
+.book_dec>div
+{
+    height: 50%;
+    line-height: 50px;
+}
+.book_state
+{
+    float: right;
+    margin: 10px;
+    margin-right: 40px;
+    height: 100px;
+    line-height: 100px;
+}
+
+.booklist img
+{
+    margin-left: 30px;
+   width: 100px;
+   height: 100px;
+   display: block;
+}
+.list_optor
+{
+    float: right;
+    height: 100px;
+    margin: 10px;
+    line-height: 100px;
+}
+
+header{
+    height: 40px;
+    line-height: 40px;
+    background-color:  #f2f2f2;
+    border-bottom: 1px solid #dddddd;
+    padding-left: 5px; 
+}
+footer{
+    height: 40px;
+    line-height: 40px;
+    background-color:  #f2f2f2;
+    border-top: 1px solid #dddddd; 
+    padding-left: 5px; 
+}
+header>span,footer>span
+{
+   display: inline-block;
+    width: 400px;
+}
+.booklist>div
+{
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    margin:20px 0px;
+}
+.book_container
+{
+    padding-left: 5px;
+}
+.book_dec label
+{
+    width: 80px;
+}

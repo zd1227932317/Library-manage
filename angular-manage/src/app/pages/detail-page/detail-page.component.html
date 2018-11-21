@@ -1,0 +1,70 @@
+<div class="content-wrapper">
+  <section class="content-header">
+    <h1>
+      图书信息管理
+    </h1>
+    <ol class="breadcrumb">
+      <li> <a  [routerLink]="['/index/home']" ><i class="fa fa-dashboard"></i> Home</a></li>
+      <li><a  [routerLink]="['/index/detail']" >图书信息管理</a></li>
+    </ol>
+  </section>
+  <hr>
+  <section class="content">
+    <button class="btn btn-success" (click)="btnadd_onclick()" id="addnew"><span class="glyphicon glyphicon-plus"></span>添加新图书</button>
+    <div class="form-group input-group" style="width:800px;">
+      <select name="categroy" class="form-control ng-pristine ng-valid ng-touched" style="width: 150px;margin-right: 10px;z-index: 0;"
+        [(ngModel)]="checkbook.categoryId">
+        <option value="">图书类别</option>
+        <option *ngFor="let item of categorylist" [value]="item.Id">{{item.Name}}</option>
+      </select>
+      <select name="categroy" class="form-control ng-pristine ng-valid ng-touched" style="width: 150px;margin-right: 10px;z-index: 0;"
+        [(ngModel)]="checkbook.publisherId">
+        <option value="">出版社</option>
+        <option [value]="item.Id" *ngFor="let item of publisherlist">{{item.Name}}</option>
+      </select>
+      <div class="input-group" style="width:200px;">
+        <input type="text" class="form-control ng-untouched ng-pristine ng-valid;" style="z-index:0;" [(ngModel)]="checkbook.keyword">
+        <span class="input-group-btn " style="z-index:0;">
+          <button class="btn btn-primary" (click)="search_onclick()"><i class="glyphicon glyphicon-search"></i></button>
+        </span>
+      </div>
+    </div>
+
+
+    <table class="table table-striped " style="margin-top:40px;">
+      <thead>
+        <tr>
+          <th>序号</th>
+          <th>书名</th>
+          <th>图片</th>
+          <th>作者</th>
+          <th>出版社</th>
+          <th>图书数量</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of list;let i=index;">
+          <td>{{i+1+page.pageSize*page.pageIndex}}</td>
+          <td>{{item.Book.Name}}</td>
+          <td><img [src]="item.Book.Image" alt=""></td>
+          <td>{{item.Book.Author.Name}}</td>
+          <td>{{item.Book.Publisher.Name}}</td>
+          <td>{{item.Number}}</td>
+          <td>
+            <button class="btn btn-info" (click)="btninfo_onclick(item.Book.Id)">详情</button>
+            <button class="btn btn-warning" (click)="btnedit_onclick(item.Book.Id)">编辑</button>
+            <button class="btn btn-success"(click)="btninstroage_onclick(item.Book.Id)">入库</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <nav aria-label="Page navigation">
+      <ul class="pagination">
+        <li [ngClass]="{'active':page.pageIndex==i}" *ngFor="let item of page.pages;let i=index;" (click)="page_onclick(i)"><a
+            href="javascript:void(0)">{{i+1}}</a></li>
+      </ul>
+    </nav>
+  </section>
+  <app-instroage-module #instroage (afterSave)="Save_onclick()"></app-instroage-module>
+</div>

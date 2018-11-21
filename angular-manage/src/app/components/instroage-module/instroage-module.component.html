@@ -1,0 +1,18 @@
+<div class="dialog" *ngIf="state">
+  <div>
+    <header class="text-left">入库</header>
+    <div class="form-horizontal">
+      <div class="form-group">
+        <label for="txtnumber" class="col-sm-5 control-label">请输入图书数量</label>
+        <div class="col-sm-7">
+          <input type="text" id="txtnumber" class="form-control" [(ngModel)]="bookNumber" >
+        </div>
+      </div>
+    
+    </div>
+    <footer class="text-right">
+      <button class="btn btn-default" (click)="state=false">取消</button>
+      <button class="btn btn-primary" (click)="btnSave_onclick($event)">保存</button>
+    </footer>
+  </div>
+</div>
